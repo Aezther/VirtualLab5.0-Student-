@@ -8,6 +8,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using Unity.VisualScripting;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
+using System.Xml.Linq;
 
 public class StudentLogin : MonoBehaviour {
     
@@ -35,10 +37,10 @@ public class StudentLogin : MonoBehaviour {
     private string StudentIDInfo;
     private string timeLoggedIn;
     void Start() {
-        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+        connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
         //connectionString = "Data Source =C:\\Users\\Ian\\VirtualLab 5.0 (Server) Compiled\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
         //ReadDBserver();
-        
+
     }
 
     //USED ONLY FOR ACCESSING ANOTHER SCRIPT
@@ -53,37 +55,51 @@ public class StudentLogin : MonoBehaviour {
     }
 
 
-    public void StudentLoginVerify() {
-        using (IDbConnection dbConnection = new SqliteConnection(connectionString)) {
-            dbConnection.Open();
-            using (IDbCommand dbCmd = dbConnection.CreateCommand()) {
+    public bool StudentLoginVerify() 
+    {
+        bool isValidLogin = false;
+        bool isExistingUsername = false;
+        bool isExistingPass = false;
 
-                
+        using (IDbConnection dbConnection = new SqliteConnection(connectionString)) 
+        {
+            dbConnection.Open();
+            using (IDbCommand dbCmd = dbConnection.CreateCommand()) 
+            {
+
+               
 
                 //READING THE DATABASE
                 //USERNAME
                 sqlQuery = "SELECT Username FROM StudentsTBL";
                 dbCmd.CommandText = sqlQuery;
-                using (IDataReader reader = dbCmd.ExecuteReader()) {
-                    while (reader.Read()) {
+                using (IDataReader reader = dbCmd.ExecuteReader()) 
+                {
+                    while (reader.Read()) 
+                    {
                         string DBUsername = reader.GetString(0);
-
-                        if (string.IsNullOrEmpty(UserIF.text)) {
-                            UserError.text = "Username is empty.";
-                        }
-                        if (!string.IsNullOrEmpty(UserIF.text)) {
+                        if (UserIF.text == DBUsername && !string.IsNullOrEmpty(UserIF.text))
+                        {
                             UserError.text = "";
-                        }
-                        if (UserIF.text != DBUsername && !string.IsNullOrEmpty(UserIF.text)) {
-                            UserError.text = "";
-                            UserError.text = "Invalid username.";
-                        }
-                        if (UserIF.text == DBUsername && !string.IsNullOrEmpty(UserIF.text)) {
-                            UserError.text = "";
+                            isExistingUsername = true;
 
                         }
-
-
+                        else
+                        {
+                            if (string.IsNullOrEmpty(UserIF.text))
+                            {
+                                UserError.text = "Username is empty.";
+                            }
+                            if (!string.IsNullOrEmpty(UserIF.text))
+                            {
+                                UserError.text = "";
+                            }
+                            if (UserIF.text != DBUsername && !string.IsNullOrEmpty(UserIF.text))
+                            {
+                                UserError.text = "";
+                                UserError.text = "Invalid username.";
+                            }
+                        }
                         //Debug.Log("Usernames are: " + DBUsername);
                     }
                     reader.Close();
@@ -91,50 +107,76 @@ public class StudentLogin : MonoBehaviour {
                 //PASSWORD
                 sqlQuery = "SELECT Password FROM StudentsTBL";
                 dbCmd.CommandText = sqlQuery;
-                using (IDataReader reader = dbCmd.ExecuteReader()) {
-                    while (reader.Read()) {
+
+                using (IDataReader reader = dbCmd.ExecuteReader()) 
+                {
+                    while (reader.Read()) 
+                    {
                         string DBPassword = reader.GetString(0);
 
-                        if (string.IsNullOrEmpty(PassIF.text)) {
-                            PasswordError.text = "Passwords is empty.";
-                        }
-                        if (!string.IsNullOrEmpty(PassIF.text)) {
+                        if (PassIF.text == DBPassword && !string.IsNullOrEmpty(PassIF.text))
+                        {
                             PasswordError.text = "";
+                            isExistingPass = true;
                         }
-                        if (UserIF.text != DBPassword && !string.IsNullOrEmpty(PassIF.text)) {
-                            PasswordError.text = "";
-                            PasswordError.text = "Invalid password.";
-                        }
-                        if (UserIF.text == DBPassword && !string.IsNullOrEmpty(PassIF.text)) {
-                            PasswordError.text = "";
+                        else
+                        {
+                            if (string.IsNullOrEmpty(PassIF.text))
+                            {
+                                PasswordError.text = "Passwords is empty.";
+                            }
+                            if (!string.IsNullOrEmpty(PassIF.text))
+                            {
+                                PasswordError.text = "";
+                            }
+                            if (UserIF.text != DBPassword && !string.IsNullOrEmpty(PassIF.text))
+                            {
+                                PasswordError.text = "";
+                                PasswordError.text = "Invalid password.";
+                            }
                         }
                         //Debug.Log("Passwords are: " + DBPassword);
                     }
                     reader.Close();
                 }
-                sqlQuery = "SELECT Username, Password FROM StudentsTBL";
-                dbCmd.CommandText = sqlQuery;
-                using (IDataReader reader = dbCmd.ExecuteReader()) {
-                    while (reader.Read()) {
-                        string DBUsername = reader.GetString(0);
-                        string DBPassword = reader.GetString(1);
-                        
-                        if (DBUsername.Equals(UserIF.text) && DBPassword.Equals(PassIF.text)) {
-                            PasswordError.text = "";
-                            UserError.text = "";
-                            StartCoroutine(LoadScenes("3. Student's Dashboard"));
 
-                            GetUserCredentials();
-                            GetandAddUserLoggedInTimeAndDate();
-                            //Attempt1();
-                            InsertStudentLoginDateAndTime();
-                        }    
+                // ONLY CHECK IF USERNAME AND PASS MATCHES WHEN BOTH EXISTS IN THE DATABASE
+                if (isExistingUsername && isExistingPass)
+                {
+                    // CHECK IF USERNAME AND PASSWORD MATCHES
+                    sqlQuery = "SELECT Username, Password FROM StudentsTBL";
+                    dbCmd.CommandText = sqlQuery;
+
+
+                    using (IDataReader reader = dbCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string DBUsername = reader.GetString(0);
+                            string DBPassword = reader.GetString(1);
+
+                            if (DBUsername.Equals(UserIF.text) && DBPassword.Equals(PassIF.text))
+                            {
+
+                                // return = true
+                                PasswordError.text = "";
+                                UserError.text = "";
+                                isValidLogin = true;
+                            }
+                            else
+                            {
+                                isValidLogin = false;
+                            }
+                        }
+                        reader.Close();
                     }
-                    reader.Close();
                 }
+               
                 dbConnection.Close();
             }
         }
+
+        return isValidLogin;
     }
 
     //METHOD TO: GET USERS CREDENTIAL FROM THE ROW
@@ -193,19 +235,31 @@ public class StudentLogin : MonoBehaviour {
 
                 //start
                 
-                sqlQuery = "INSERT INTO StudentSessionsTBL (Action, Time, StudentID) VALUES ('Login','11:05','" + StudentIDInfo + "');";
+                sqlQuery = "INSERT INTO StudentSessionsTBL (Action, Time, StudentID) VALUES ('Login','"+ timeLoggedIn +"','" + StudentIDInfo + "');";
                 Debug.Log(timeLoggedIn+ StudentIDInfo);
                 //sqlQuery = "INSERT INTO SectionsTBL (Sections) VALUES('Carlo');";
                 dbCmd.CommandText = sqlQuery;
-                dbCmd.ExecuteScalar();
+                dbCmd.ExecuteNonQuery();
             }
             dbConnection.Close();
         }
     }
 
-    
+    public void LogInAccount()
+    {
+        if (StudentLoginVerify() == true)
+        {
+            GetUserCredentials();
+            GetandAddUserLoggedInTimeAndDate();
+            InsertStudentLoginDateAndTime();
+            StartCoroutine(LoadScenes("3. Student's Dashboard"));
 
-
+        }
+        else
+        {
+            Debug.Log("INVALID USERNAME/PASSWORD");
+        }
+    }
 
     public void ShowPassword() {
         PasswordShow.inputType = TMP_InputField.InputType.Standard;
