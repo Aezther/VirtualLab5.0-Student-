@@ -275,7 +275,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 734423308}
         m_TargetAssemblyTypeName: FadeSceneChanger, Assembly-CSharp
-        m_MethodName: SIMULATIONStoPRETESTTypesOfFault
+        m_MethodName: btnTypesOffaultToPretest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2132,9 +2132,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 32962438, guid: 58ab1038890c44d49a9ef612344cbe1b, type: 3}
-    m_PressedSprite: {fileID: -562224606, guid: 58ab1038890c44d49a9ef612344cbe1b, type: 3}
-    m_SelectedSprite: {fileID: -562224606, guid: 58ab1038890c44d49a9ef612344cbe1b, type: 3}
+    m_HighlightedSprite: {fileID: 1752926936, guid: b3d3a11b29562ae43b5b4be4bb29b38f, type: 3}
+    m_PressedSprite: {fileID: 2073468599, guid: b3d3a11b29562ae43b5b4be4bb29b38f, type: 3}
+    m_SelectedSprite: {fileID: 2073468599, guid: b3d3a11b29562ae43b5b4be4bb29b38f, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2191,7 +2191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1898859517, guid: 58ab1038890c44d49a9ef612344cbe1b, type: 3}
+  m_Sprite: {fileID: -1891325726, guid: b3d3a11b29562ae43b5b4be4bb29b38f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3092,7 +3092,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 734423308}
         m_TargetAssemblyTypeName: FadeSceneChanger, Assembly-CSharp
-        m_MethodName: SIMULATIONStoPRETESTMicroscope
+        m_MethodName: btnMicroscopeToPretest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3524,7 +3524,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 734423308}
         m_TargetAssemblyTypeName: FadeSceneChanger, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: btnDistanceDisplacementToPretest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3686,7 +3686,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 734423308}
         m_TargetAssemblyTypeName: FadeSceneChanger, Assembly-CSharp
-        m_MethodName: SIMULATIONtoPRETESTSPeedVelocity
+        m_MethodName: btnSpeedVelocityToPretest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
