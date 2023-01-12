@@ -10,4 +10,5 @@ public class StudentInfo : ScriptableObject
     public string StudentName;
 
     public int score;
+    public string subject;
 }

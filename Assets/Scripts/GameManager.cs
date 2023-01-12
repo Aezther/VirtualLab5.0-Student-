@@ -11,7 +11,7 @@ using System.Data;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] string TestSubject;
-    [SerializeField]StudentInfo StudID;
+    [SerializeField]StudentInfo studentInfo;
     public Questions[] questions;
     private static List<Questions> unansweredQuestions;
     private Questions currentQuestion;
@@ -224,7 +224,9 @@ public class GameManager : MonoBehaviour
             
         }
         connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
-    
+        //connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+
+
     }
 
     public void idfSubmitAnswer() 
@@ -280,24 +282,30 @@ public class GameManager : MonoBehaviour
 
     public void finishQuiz()
     {
-        SceneManager.LoadScene(finishSceneName); /////PUT THE NAME OF THE SCENE YOU WANT TO LOAD AT THE SERIALIZED FIELD AT THE INSPECTOR, IT'S CALLED FINISHSCENENAME
-    }
-
-    public void addScoretoDB(){
-        
-        using (IDbConnection dbConnection = new SqliteConnection(connectionString)) {
+        using (IDbConnection dbConnection = new SqliteConnection(connectionString))
+        {
             dbConnection.Open();
-            using (IDbCommand dbCmd = dbConnection.CreateCommand()) {
+            using (IDbCommand dbCmd = dbConnection.CreateCommand())
+            {
 
                 //start
-                
-                sqlQuery = "INSERT INTO StudentSessionsTBL (Subject, Score , StudentID) VALUES ('"+TestSubject+"','"+ Score +"','" + StudID.ID + "');";
+                studentInfo.score = Score;
+                studentInfo.subject = TestSubject;
+
+                sqlQuery = "INSERT INTO StudentSessionsTBL (Subject, Score , StudentID) VALUES ('" + TestSubject + "','" + Score + "','" + studentInfo.StudentID + "');";
                 //sqlQuery = "INSERT INTO SectionsTBL (Sections) VALUES('Carlo');";
                 dbCmd.CommandText = sqlQuery;
                 dbCmd.ExecuteNonQuery();
             }
             dbConnection.Close();
         }
+
+        SceneManager.LoadScene(finishSceneName); /////PUT THE NAME OF THE SCENE YOU WANT TO LOAD AT THE SERIALIZED FIELD AT THE INSPECTOR, IT'S CALLED FINISHSCENENAME
+    }
+
+    public void addScoretoDB(){
+        
+       
     }
 
 }
