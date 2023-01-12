@@ -87,6 +87,66 @@ public class FadeSceneChanger : MonoBehaviour
     public void btnReturnLBToStudentDashboard(){
         StartCoroutine(LoadScenes("3. Student's Dashboard"));
     }
+    //PRE-TESTS
+    public void btnTypesOffaultToPretest(){
+            StartCoroutine(LoadScenes("PRETest TypesOfFault"));
+    }
+    public void btnDistanceDisplacementToPretest(){
+            StartCoroutine(LoadScenes("PRETest Distance and Displaecment"));
+    }
+    public void btnMicroscopeToPretest(){
+            StartCoroutine(LoadScenes("PRETest Microscope (Pre-Test)"));
+    }
+    public void btnSpeedVelocityToPretest(){
+            StartCoroutine(LoadScenes("PRETest Velocity"));
+    }
+
+    //VIRTUAL MICROSCOPE SIMULATION
+    public void btnLearnToLearntheparts(){
+        StartCoroutine(LoadScenes("3. Learning Microscope Parts"));
+    }
+    public void btnExploreToLearnSpecimens(){
+        StartCoroutine(LoadScenes("2. Explore Microscope Specimen"));
+    }
+    public void btnRETURNTOMICROSCOPESTARTSCREEN(){
+        StartCoroutine(LoadScenes("1. Microscope Start Screen (Temp)"));
+    }
+    
+    public void btnPretestGoingToMicroscopeSimulation(){
+         StartCoroutine(LoadScenes("1. Microscope Start Screen (Temp)"));
+         
+    }
+
+    public void btnPretestGoingToRoboDistanceDisplacementSim(){
+        StartCoroutine(LoadScenes("RoboDistance"));
+    }
+    public void btnFinishedPostTestInDistanceDisplacement(){
+        StartCoroutine(LoadScenes("3. Student's Dashboard"));
+    }
+    public void btnSuretoTakeQuizDistanceAndDisplacement(){
+        StartCoroutine(LoadScenes("Microscope TrueOrFalse"));
+    }
+
+    public void btnSuretoTakeQuizMicroscope(){
+        StartCoroutine(LoadScenes("Microscope TrueOrFalse"));
+
+    }
+
+    public void btnFinishedPostTestInMicroscope(){
+         StartCoroutine(LoadScenes("3. Student's Dashboard"));
+    }
+
+    public void btnfinishInPRETESTgoingtoLesson(){
+        StartCoroutine(LoadScenes("Distance and Displacement Lesson"));
+    }
+    public void btnfinishedinPRETESTgoingtoLESSONinMicroscope(){
+        StartCoroutine(LoadScenes("Mircroscope lesson"));
+    }
+
+    public void btnLESSONofMICROSCOPEGoingtoSimulation(){
+        StartCoroutine(LoadScenes("1. Microscope Start Screen (Temp)"));
+
+    }
     IEnumerator LoadScenes(string SceneIndex) //To control the speed of the transition
     {
         //play the animation using trigger
@@ -97,6 +157,7 @@ public class FadeSceneChanger : MonoBehaviour
 
         //load the scene
         SceneManager.LoadScene(SceneIndex);
+
     }
 
 }

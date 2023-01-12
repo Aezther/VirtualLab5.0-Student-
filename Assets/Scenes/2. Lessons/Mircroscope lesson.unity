@@ -33093,7 +33093,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 777614582}
         m_TargetAssemblyTypeName: FadeSceneChanger, Assembly-CSharp
-        m_MethodName: LESSONtoSIMULATIONMicroscope
+        m_MethodName: btnLESSONofMICROSCOPEGoingtoSimulation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,4 +8,6 @@ public class StudentInfo : ScriptableObject
     public string StudentID;
     public string StudentUsername;
     public string StudentName;
+
+    public int score;
 }
