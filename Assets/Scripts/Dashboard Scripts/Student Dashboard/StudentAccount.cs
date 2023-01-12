@@ -6,8 +6,9 @@ using TMPro;
 public class StudentAccount : MonoBehaviour
 {
     public TextMeshProUGUI displayStudentName;
+    [SerializeField] StudentInfo userInfo;
 
     public void Awake() {
-        displayStudentName.text = StudentLogin.studentLogin.Student_name;
+        displayStudentName.text = userInfo.StudentName;
     }
 }

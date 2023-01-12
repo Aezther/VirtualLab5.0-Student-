@@ -39,13 +39,15 @@ public class StudentLogin : MonoBehaviour {
     private string sqlQuery;
     //private string StudentIDInfo;
     private string timeLoggedIn;
+
+    [SerializeField] StudentInfo userInfo;
     
 
     void Start() {
-        //connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+        connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
         
         //connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
-        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+        //connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
         //connectionString = @"Data Source =C:\\192.168.1.49\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db ";
         //ReadDBserver();
 
@@ -55,7 +57,7 @@ public class StudentLogin : MonoBehaviour {
     private void Awake() {
         if (studentLogin == null) {
             studentLogin = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else {
             Destroy(gameObject);
@@ -189,7 +191,9 @@ public class StudentLogin : MonoBehaviour {
     }
 
     //METHOD TO: GET USERS CREDENTIAL FROM THE ROW
-    public void GetUserCredentials() {
+    public void GetUserCredentials() 
+    {
+
         using (IDbConnection dbConnection = new SqliteConnection(connectionString)) {
             dbConnection.Open();
             using (IDbCommand dbCmd = dbConnection.CreateCommand()) {
@@ -202,7 +206,7 @@ public class StudentLogin : MonoBehaviour {
                         string Firstname = reader.GetString(0);
                         string Lastname = reader.GetString(1);
 
-                        Student_name = Firstname.First().ToString().ToUpper() + Firstname.Substring(1) + " " + Lastname.First().ToString().ToUpper() + Lastname.Substring(1);
+                        userInfo.StudentName = Firstname.First().ToString().ToUpper() + Firstname.Substring(1) + " " + Lastname.First().ToString().ToUpper() + Lastname.Substring(1);
                     }
                     reader.Close();
                 }
@@ -261,6 +265,7 @@ public class StudentLogin : MonoBehaviour {
             GetUserCredentials();
             GetandAddUserLoggedInTimeAndDate();
             InsertStudentLoginDateAndTime();
+            userInfo.StudentID = StudentIDInfo;
             StartCoroutine(LoadScenes("3. Student's Dashboard"));
 
         }

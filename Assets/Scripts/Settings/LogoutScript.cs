@@ -12,9 +12,10 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 using System.Xml.Linq;
 
 public class LogoutScript : MonoBehaviour
-{   
+{
 
-    
+    [SerializeField] StudentInfo userInfo;
+
 
     private string timeLoggedOut;
     private string sqlQuery;
@@ -24,21 +25,24 @@ public class LogoutScript : MonoBehaviour
     void Awake(){
 
     }
-    void Start(){
-        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+    void Start()
+    { 
+        connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+        //connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
     }
 
     //LOGOUT FUNCTION
     public void LogoutProceedToLogin(){
 
-        Debug.Log(StudentLogin.studentLogin.StudentIDInfo);
+        Debug.Log(userInfo.StudentID);
 
         InsertStudentLogOutDateAndTime();
-        
-        StudentLogin.studentLogin.StudentIDInfo = "";
+
+        userInfo.StudentID = "";
+        userInfo.StudentName = "";
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("2. Login Screen");
-        Debug.Log(StudentLogin.studentLogin.StudentIDInfo);
+        Debug.Log(userInfo.StudentID);
 
     }
     public void InsertStudentLogOutDateAndTime(){
@@ -47,7 +51,7 @@ public class LogoutScript : MonoBehaviour
         using (IDbConnection dbConnection = new SqliteConnection(connectionString)) {
             dbConnection.Open();
             using (IDbCommand dbCmd = dbConnection.CreateCommand()) {
-                sqlQuery = "INSERT INTO StudentSessionsTBL (Action, Time, StudentID) VALUES ('Log Out','"+ timeLoggedOut +"','" + StudentLogin.studentLogin.StudentIDInfo + "');";
+                sqlQuery = "INSERT INTO StudentSessionsTBL (Action, Time, StudentID) VALUES ('Log Out','"+ timeLoggedOut +"','" + userInfo.StudentID + "');";
                 dbCmd.CommandText = sqlQuery;
                 dbCmd.ExecuteNonQuery();
             }
