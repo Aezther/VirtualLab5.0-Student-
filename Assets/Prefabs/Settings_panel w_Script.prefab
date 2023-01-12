@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3871092874085800479}
   - component: {fileID: 3871092874085800477}
   - component: {fileID: 3871092874085800474}
+  - component: {fileID: 7634634595805819886}
   m_Layer: 5
   m_Name: Settings_panel w_Script
   m_TagString: Untagged
@@ -119,6 +120,19 @@ MonoBehaviour:
   resolutionLabel: {fileID: 3871092876121814519}
   volumeSlider: {fileID: 3871092875412212186}
   volumeTextUI: {fileID: 3871092874120716384}
+--- !u!114 &7634634595805819886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871092874085800465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e14302e159ada47af691e061fe9e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 0}
 --- !u!1 &3871092874094778314
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b87a8e8a88f848459b5709ac6b7683f, type: 2}
   m_sharedMaterial: {fileID: 6143366089291056593, guid: 4b87a8e8a88f848459b5709ac6b7683f, type: 2}
@@ -2225,7 +2239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GRAPHICS
+  m_text: DISPLAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b87a8e8a88f848459b5709ac6b7683f, type: 2}
   m_sharedMaterial: {fileID: 6143366089291056593, guid: 4b87a8e8a88f848459b5709ac6b7683f, type: 2}
@@ -2749,9 +2763,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 7634634595805819886}
+        m_TargetAssemblyTypeName: LogoutScript, Assembly-CSharp
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
