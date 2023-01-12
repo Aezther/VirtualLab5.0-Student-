@@ -397,6 +397,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7634634595805819886, guid: 0b295c630da51c446b6f605cce316db4, type: 3}
+      propertyPath: userInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bdf9eb4863898042ac63af6e58196f9, type: 2}
+    - target: {fileID: 7634634595805819886, guid: 0b295c630da51c446b6f605cce316db4, type: 3}
       propertyPath: transition
       value: 
       objectReference: {fileID: 1750010552}
@@ -636,6 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayStudentName: {fileID: 1270995304}
+  userInfo: {fileID: 11400000, guid: 0bdf9eb4863898042ac63af6e58196f9, type: 2}
 --- !u!4 &198825949
 Transform:
   m_ObjectHideFlags: 0
