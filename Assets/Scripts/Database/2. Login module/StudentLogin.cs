@@ -14,10 +14,13 @@ using System.Xml.Linq;
 public class StudentLogin : MonoBehaviour {
     
 
+    public string StudentIDInfo = "Show this message";
+
     [Header("ACCESS SCENES")]
     public static StudentLogin studentLogin;
     public string Student_name;
 
+ 
     public Animator transition;
     [Header("INPUTFIELD FOR SHOWPASSWORD")]
     public TMP_InputField PasswordShow;
@@ -34,13 +37,15 @@ public class StudentLogin : MonoBehaviour {
     //VARIABLES USED FOR SQLITE DATABASE
     private string connectionString;
     private string sqlQuery;
-    private string StudentIDInfo;
+    //private string StudentIDInfo;
     private string timeLoggedIn;
+    
 
     void Start() {
         //connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
         
-        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db ";
+        //connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
         //connectionString = @"Data Source =C:\\192.168.1.49\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db ";
         //ReadDBserver();
 
@@ -158,13 +163,14 @@ public class StudentLogin : MonoBehaviour {
                             string DBUsername = reader.GetString(0);
                             string DBPassword = reader.GetString(1);
 
-                            if (DBUsername.Equals(UserIF.text) && DBPassword.Equals(PassIF.text))
+                            if (DBUsername == UserIF.text && DBPassword == PassIF.text)
                             {
 
                                 // return = true
                                 PasswordError.text = "";
                                 UserError.text = "";
                                 isValidLogin = true;
+                                break;
                             }
                             else
                             {
@@ -174,11 +180,11 @@ public class StudentLogin : MonoBehaviour {
                         reader.Close();
                     }
                 }
-               
+        
                 dbConnection.Close();
             }
         }
-
+        Debug.Log("Username: " + isExistingUsername + " Pass: " + isExistingPass + "Match:" + isValidLogin);
         return isValidLogin;
     }
 
@@ -238,7 +244,7 @@ public class StudentLogin : MonoBehaviour {
 
                 //start
                 
-                sqlQuery = "INSERT INTO StudentSessionsTBL (Action, Time, StudentID) VALUES ('Login','"+ timeLoggedIn +"','" + StudentIDInfo + "');";
+                sqlQuery = "INSERT INTO StudentSessionsTBL (Action, Time, StudentID) VALUES ('Log in','"+ timeLoggedIn +"','" + StudentIDInfo + "');";
                 Debug.Log(timeLoggedIn+ StudentIDInfo);
                 //sqlQuery = "INSERT INTO SectionsTBL (Sections) VALUES('Carlo');";
                 dbCmd.CommandText = sqlQuery;

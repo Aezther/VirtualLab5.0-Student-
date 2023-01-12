@@ -1,23 +1,62 @@
+using Mono.Data.Sqlite;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
+using Unity.VisualScripting;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
+using System.Xml.Linq;
 
 public class LogoutScript : MonoBehaviour
-{
-        public Animator transition;
-    public void btnSimulationsToSimulations() {
-        StartCoroutine(LoadScenes("5. Simulations"));
+{   
+
+    
+
+    private string timeLoggedOut;
+    private string sqlQuery;
+    private string connectionString;
+
+    
+    void Awake(){
+
     }
-        IEnumerator LoadScenes(string SceneIndex) //To control the speed of the transition
-    {
-        //play the animation using trigger
-        transition.SetTrigger("Start");
+    void Start(){
+        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+    }
 
-        //Animation Transition Time speed
-        yield return new WaitForSeconds(1f);
+    //LOGOUT FUNCTION
+    public void LogoutProceedToLogin(){
 
-        //load the scene
-        SceneManager.LoadScene(SceneIndex);
+        Debug.Log(StudentLogin.studentLogin.StudentIDInfo);
+
+        InsertStudentLogOutDateAndTime();
+        
+        StudentLogin.studentLogin.StudentIDInfo = "";
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("2. Login Screen");
+        Debug.Log(StudentLogin.studentLogin.StudentIDInfo);
+
+    }
+    public void InsertStudentLogOutDateAndTime(){
+
+        timeLoggedOut = System.DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy HH:mm:ss tt");
+        using (IDbConnection dbConnection = new SqliteConnection(connectionString)) {
+            dbConnection.Open();
+            using (IDbCommand dbCmd = dbConnection.CreateCommand()) {
+                sqlQuery = "INSERT INTO StudentSessionsTBL (Action, Time, StudentID) VALUES ('Log Out','"+ timeLoggedOut +"','" + StudentLogin.studentLogin.StudentIDInfo + "');";
+                dbCmd.CommandText = sqlQuery;
+                dbCmd.ExecuteNonQuery();
+            }
+            dbConnection.Close();
+        }
+    }
+
+    //MAIN MENU BUTTON
+    public void ProceedToMainMenu(){
+        SceneManager.LoadScene("3. Student's Dashboard");
     }
 }
