@@ -124,7 +124,7 @@ public class FadeSceneChanger : MonoBehaviour
         StartCoroutine(LoadScenes("3. Student's Dashboard"));
     }
     public void btnSuretoTakeQuizDistanceAndDisplacement(){
-        StartCoroutine(LoadScenes("Microscope TrueOrFalse"));
+        StartCoroutine(LoadScenes("DistanceDisplacement"));
     }
 
     public void btnSuretoTakeQuizMicroscope(){
