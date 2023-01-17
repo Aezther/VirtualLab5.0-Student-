@@ -87,6 +87,37 @@ EditorBuildSettings:
     path: Assets/Scenes/3. Simulations/Distance and Displacement/RoboDistance/RoboDistance.unity
     guid: 4a9623eb6c29b9e4a956d9da9de221f1
   - enabled: 1
-    path: Assets/Scenes/1. Dashboard/Types of Fault.unity
+    path: Assets/Scenes/1. Dashboard/Animals.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Imported Packages/Distance and Displacement/Scenes [D_D]/Distance
+      and Displacement.unity
+    guid: 027a2186b0924ad4d810967e490c5e68
+  - enabled: 1
+    path: Assets/Imported Packages/Speed and Velocity/Scenes [SNV]/Demo 2.unity
+    guid: f02d3acd22d656d48bcdc55b8c65269e
+  - enabled: 1
+    path: Assets/Imported Packages/Speed and Velocity/Scenes [SNV]/Speed.unity
+    guid: 73da383e87da41141b30cc6155eeadd1
+  - enabled: 1
+    path: Assets/Imported Packages/Types of Fault/Scenes/TypeOfFaultSim.unity
+    guid: 605ad41a90029754d9e1a34845e91015
+  - enabled: 1
+    path: Assets/Scenes/2. Lessons/Lesson (Speed and Velocity).unity
+    guid: 110f133d901437547a97f42ff61f1175
+  - enabled: 1
+    path: Assets/Scenes/2. Lessons/Types of Fault.unity
+    guid: 96c73af1d282ba54d8d7d361387d3476
+  - enabled: 1
+    path: Assets/Scenes/DnDLessonStart.unity
+    guid: 8c6ba97e90a3cbd459dc35ed04dce2ab
+  - enabled: 1
+    path: Assets/Scenes/MicroLessonStart.unity
+    guid: efb29d1d084fede43a440fea33e9f77b
+  - enabled: 1
+    path: Assets/Scenes/ToFLessonStart.unity
+    guid: 65755139eedbb954a915a03ad7360b3b
+  - enabled: 1
+    path: Assets/Scenes/SpeedLessonStart.unity
+    guid: 99318de248bcf6d4ab7502ac43d3a5eb
   m_configObjects: {}

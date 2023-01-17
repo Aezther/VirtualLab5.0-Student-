@@ -147,6 +147,99 @@ public class FadeSceneChanger : MonoBehaviour
         StartCoroutine(LoadScenes("1. Microscope Start Screen (Temp)"));
 
     }
+    ////Lesson Starts
+    public void lessonStartDND(){
+        StartCoroutine(LoadScenes("DnDLessonStart"));
+
+    }
+    public void LessonStartMicro(){
+        StartCoroutine(LoadScenes("MicroLessonStart"));
+
+    }
+    public void LessonStartFault(){
+        StartCoroutine(LoadScenes("ToFLessonStart"));
+
+    }
+    
+    public void LessonStartSpeed(){
+        StartCoroutine(LoadScenes("SpeedLessonStart"));
+
+    }
+    ////Lesson Starting Page - Distance and Displacement
+    public void dndStartPretestBTN(){
+        StartCoroutine(LoadScenes("PRETest Distance and Displaecment"));
+
+    }
+    public void dndStartLessonBTN(){
+        StartCoroutine(LoadScenes("Distance and Displacement Lesson"));
+
+    }
+    public void dndStartSimBTN(){
+        StartCoroutine(LoadScenes("Choose Distance&Displacement Simulations"));
+
+    }
+
+    public void dndStartPostTestBTN(){
+        StartCoroutine(LoadScenes("DistanceDisplacement"));
+
+    }
+
+    ////Lesson Starting Page - Microscope
+    public void MicroStartPreTestBTN(){
+        StartCoroutine(LoadScenes("PRETest Microscope (Pre-Test)"));
+
+    }
+    public void MicroStartLessonBTN(){
+        StartCoroutine(LoadScenes("Mircroscope lesson"));
+
+    }
+
+    public void MicroStartSimBTN(){
+        StartCoroutine(LoadScenes("1. Microscope Start Screen (Temp)"));
+
+    }
+
+     public void MicroStartPostTestBTN(){
+        StartCoroutine(LoadScenes("Microscope TrueOrFalse"));
+
+    }
+
+    ////Lesson Starting Page - Speed    
+     public void SpeedStartPreTestBTN(){
+        StartCoroutine(LoadScenes("PRETest Velocity"));
+
+    }
+    
+    public void SpeedStartLessonBTN(){
+        StartCoroutine(LoadScenes("Lesson (Speed and Velocity)"));
+
+    }
+
+    public void SpeedStartSimBTN(){
+        StartCoroutine(LoadScenes("Lesson (Speed and Velocity)"));
+
+    }
+
+    public void SpeedStartPostTestBTN(){
+        StartCoroutine(LoadScenes("Lesson (Speed and Velocity)"));
+
+    }
+
+    ////Lesson Starting Page - Types of Faults   
+    public void ToFStartPreTestBTN(){
+        StartCoroutine(LoadScenes("PRETest TypesOfFault"));
+
+    }
+
+    public void ToFStartLessontBTN(){
+        StartCoroutine(LoadScenes("Types of Fault"));
+
+    }
+    
+    public void ToFStartSimBTN(){
+        StartCoroutine(LoadScenes("TypeOfFaultSim"));
+
+    }
     IEnumerator LoadScenes(string SceneIndex) //To control the speed of the transition
     {
         //play the animation using trigger
