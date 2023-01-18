@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808433123f1136c43879e665444b09ab, type: 3}
   m_Name: ActiveStudentInfo
   m_EditorClassIdentifier: 
-  StudentID: 
+  StudentID: 1010
   StudentUsername: 
   StudentName: 
+  score: 0
+  subject: 

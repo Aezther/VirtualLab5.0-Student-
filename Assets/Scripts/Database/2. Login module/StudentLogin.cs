@@ -45,8 +45,10 @@ public class StudentLogin : MonoBehaviour {
 
     void Start() {
         //connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
-        
-        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+
+        //connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+        connectionString = "Data Source = C:\\Users\\oliva\\Documents\\VirtualLab\\VirtualLab.db";
+
         //connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
         //connectionString = @"Data Source =C:\\192.168.1.49\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db ";
         //ReadDBserver();
@@ -229,7 +231,7 @@ public class StudentLogin : MonoBehaviour {
                 dbCmd.CommandText = sqlQuery;
                 using (IDataReader reader = dbCmd.ExecuteReader()) {
                     while (reader.Read()) {
-                        StudentIDInfo = reader.GetInt32(0).ToString();
+                        StudentIDInfo = reader.GetString(0);
                         Debug.Log(StudentIDInfo);
                     }
                     reader.Close();

@@ -10,7 +10,7 @@ using System.Data;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] string TestSubject;
+    [SerializeField] string Lesson;
     [SerializeField]StudentInfo studentInfo;
     public Questions[] questions;
     private static List<Questions> unansweredQuestions;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     //////////////////////IDENTIFICATION HERE////////////////////////////////
 
     public IdentificationQuestions[] idfQuestionsRef;
-    private static List<IdentificationQuestions> idfunanswered;
+    private List<IdentificationQuestions> idfunanswered;
     private IdentificationQuestions idfcurrentQuestion;
     
 
@@ -95,16 +95,24 @@ public class GameManager : MonoBehaviour
 
     void Start ()
     {
-
-
         if (unansweredQuestions == null || unansweredQuestions.Count == 0)
         {
             unansweredQuestions = questions.ToList<Questions>();
+            Debug.Log("sample question: "+unansweredQuestions[0]);
+        }
+        else
+        {
+            Debug.Log("Questions preset not found");
         }
 
         if(idfunanswered == null || idfunanswered.Count == 0)
         {
             idfunanswered = idfQuestionsRef.ToList<IdentificationQuestions>();
+        }
+        else
+        {
+            Debug.Log(" Identification Questions preset not found");
+
         }
 
         GetAQuestion();
@@ -226,9 +234,8 @@ public class GameManager : MonoBehaviour
             StartCoroutine(loadToF());
             
         }
-        connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
-        //connectionString = "Data Source =C:\\Users\\oliva\\Documents\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
-
+        //connectionString = "Data Source =C:\\Users\\Ian\\OneDrive\\Desktop\\GitHub\\VirtualLab5.0\\Assets\\StreamingAssets\\Database\\VirtualDB.db";
+        connectionString = "Data Source = C:\\Users\\oliva\\Documents\\VirtualLab\\VirtualLab.db";
 
     }
 
@@ -293,9 +300,9 @@ public class GameManager : MonoBehaviour
 
                 //start
                 studentInfo.score = Score;
-                studentInfo.subject = TestSubject;
+                studentInfo.lesson = Lesson;
 
-                sqlQuery = "INSERT INTO StudentSessionsTBL (Subject, Score , StudentID) VALUES ('" + TestSubject + "','" + Score + "','" + studentInfo.StudentID + "');";
+                sqlQuery = "INSERT INTO ScoresTBL (Lesson, Score , StudentID) VALUES ('" + Lesson + "','" + Score + "','" + studentInfo.StudentID + "');";
                 //sqlQuery = "INSERT INTO SectionsTBL (Sections) VALUES('Carlo');";
                 dbCmd.CommandText = sqlQuery;
                 dbCmd.ExecuteNonQuery();
@@ -303,7 +310,7 @@ public class GameManager : MonoBehaviour
             dbConnection.Close();
         }
 
-        SceneManager.LoadScene(finishSceneName); /////PUT THE NAME OF THE SCENE YOU WANT TO LOAD AT THE SERIALIZED FIELD AT THE INSPECTOR, IT'S CALLED FINISHSCENENAME
+        //SceneManager.LoadScene(finishSceneName); /////PUT THE NAME OF THE SCENE YOU WANT TO LOAD AT THE SERIALIZED FIELD AT THE INSPECTOR, IT'S CALLED FINISHSCENENAME
     }
 
     public void addScoretoDB(){
