@@ -95,6 +95,8 @@ public class GameManager : MonoBehaviour
 
     void Start ()
     {
+
+
         if (unansweredQuestions == null || unansweredQuestions.Count == 0)
         {
             unansweredQuestions = questions.ToList<Questions>();
@@ -105,15 +107,16 @@ public class GameManager : MonoBehaviour
             idfunanswered = idfQuestionsRef.ToList<IdentificationQuestions>();
         }
 
-         GetAQuestion();
-         idfGetAQuestion();
+        GetAQuestion();
+        idfGetAQuestion();
+    
     }
 
     void GetAQuestion()
     {
         // int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
         // currentQuestion = unansweredQuestions[randomQuestionIndex];
-
+        
         if(unansweredQuestions.Count >0)
         {
            int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);

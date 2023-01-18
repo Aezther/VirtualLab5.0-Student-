@@ -68,7 +68,7 @@ public class FadeSceneChanger : MonoBehaviour
         StartCoroutine(LoadScenes("4. Lessons"));
     }
     public void btnNextToChooseSimulationDistanceDisplacement(){
-        StartCoroutine(LoadScenes("Choose Distance&Displacement Simulations"));
+        StartCoroutine(LoadScenes("Choose Distance&Displacement Simulations 1"));
     }
     
     //4.3 PICK SIMULATION
@@ -178,7 +178,7 @@ public class FadeSceneChanger : MonoBehaviour
 
     }
     public void dndStartSimBTN(){
-        StartCoroutine(LoadScenes("Choose Distance&Displacement Simulations"));
+        StartCoroutine(LoadScenes("Choose Distance&Displacement Simulations 1"));
 
     }
 
@@ -228,6 +228,18 @@ public class FadeSceneChanger : MonoBehaviour
 
     }
 
+    public void speedChooseSimulationSpeedVelocity(){
+        StartCoroutine(LoadScenes("Choose SpeedVelocity"));
+    }
+    public void SpeedMarbleSim(){
+        StartCoroutine(LoadScenes("MarbleRace"));
+    }
+
+    public void SpeedCityRoadSim(){
+        StartCoroutine(LoadScenes("CityRoad"));
+    }
+
+
     ////Lesson Starting Page - Types of Faults   
     public void ToFStartPreTestBTN(){
         StartCoroutine(LoadScenes("PRETest TypesOfFault"));
@@ -243,6 +255,16 @@ public class FadeSceneChanger : MonoBehaviour
         StartCoroutine(LoadScenes("TypeOfFaultSim"));
 
     }
+
+    ///post test
+    public void faultPostTest(){
+        StartCoroutine(LoadScenes("ToF PostTest"));
+
+    }
+     public void speedVelPostTest(){
+        StartCoroutine(LoadScenes("SpeedVel Post Test"));
+
+    }
     IEnumerator LoadScenes(string SceneIndex) //To control the speed of the transition
     {
         //play the animation using trigger
@@ -250,9 +272,10 @@ public class FadeSceneChanger : MonoBehaviour
 
         //Animation Transition Time speed
         yield return new WaitForSeconds(1f);
-
+        Debug.Log(SceneIndex);
         //load the scene
         SceneManager.LoadScene(SceneIndex);
+       
 
     }
 
