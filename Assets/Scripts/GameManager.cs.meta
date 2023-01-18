@@ -3,7 +3,28 @@ guid: d9888c59239ef9c40ae5e58687c57379
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - studentInfo: {fileID: 11400000, guid: 0bdf9eb4863898042ac63af6e58196f9, type: 2}
+  - questionText: {instanceID: 0}
+  - btnTrue: {instanceID: 0}
+  - btnFalse: {instanceID: 0}
+  - TrueAnswerText: {instanceID: 0}
+  - FalseAnswerText: {instanceID: 0}
+  - TrueAnswerTexto: {instanceID: 0}
+  - FalseAnswerTexto: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - animatorResult: {instanceID: 0}
+  - ToF: {instanceID: 0}
+  - ResultScreen: {instanceID: 0}
+  - ScoreText: {instanceID: 0}
+  - idfanimator: {instanceID: 0}
+  - idfQuestionText: {instanceID: 0}
+  - ansBox: {instanceID: 0}
+  - idfansBox: {instanceID: 0}
+  - idfsubmitbtn: {instanceID: 0}
+  - identificationForm: {instanceID: 0}
+  - ToFForm: {instanceID: 0}
+  - transition: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
