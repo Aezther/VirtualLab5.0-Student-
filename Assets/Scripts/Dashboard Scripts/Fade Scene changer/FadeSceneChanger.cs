@@ -75,6 +75,9 @@ public class FadeSceneChanger : MonoBehaviour
     public void btnRoboSimToRoboSimulation(){
         StartCoroutine(LoadScenes("RoboDistance"));
     }
+    public void btnDnDFarm(){
+        StartCoroutine(LoadScenes("Distance and Displacement"));
+    }
     //5. SIMULATIONS
     public void btnReturnToStudentDashboard() {
         StartCoroutine(LoadScenes("3. Student's Dashboard"));
