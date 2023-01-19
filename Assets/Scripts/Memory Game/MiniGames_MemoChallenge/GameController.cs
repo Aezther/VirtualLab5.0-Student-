@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
 
     private int firstGuessIndex, secondGuessIndex;
     private string firstGuessPuzzle, secondGuessPuzzle;
+    public GameObject Sheesh;
 
     void Awake(){
        
@@ -84,6 +85,8 @@ public class GameController : MonoBehaviour
             secondGuess = true;
 
             secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+           
+
             
             try{
                 secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
@@ -93,8 +96,6 @@ public class GameController : MonoBehaviour
 
             StartCoroutine(CheckIfThePuzzlesMatch());
             }catch(Exception){}
-            
-
           
 
         }
@@ -139,6 +140,7 @@ public class GameController : MonoBehaviour
         if(countCorrectGuesses == gameGuesses){
             Debug.Log("Game Finished");
             Debug.Log("It took you" + countGuesses + "many gues(es) to finish the game");
+            Sheesh.SetActive(true);
             
         }
     }

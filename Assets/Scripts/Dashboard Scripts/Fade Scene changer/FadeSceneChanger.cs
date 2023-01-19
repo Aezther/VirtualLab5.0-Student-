@@ -37,6 +37,17 @@ public class FadeSceneChanger : MonoBehaviour
     public void btnMemoryGame(){
         StartCoroutine (LoadScenes("Main"));
     }
+
+    public void btnMemoryGameLv1(){
+        StartCoroutine (LoadScenes("lvl1"));
+    }
+    public void btnMemoryGameLv2(){
+        StartCoroutine (LoadScenes("Lvl2"));
+    }
+    
+    public void btnMemoryGameLv3(){
+        StartCoroutine (LoadScenes("lvl3"));
+    }
     //5.1 MINIGAME: INSIDE GUESS THE SHADOW
     public void btnExitToMinigamesPanel(){
         StartCoroutine(LoadScenes("6. Minigames"));
