@@ -1417,6 +1417,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: NewPasswordVisibilityHide
       objectReference: {fileID: 0}
+    - target: {fileID: 4142594327145086972, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594327145086975, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5938057
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594327145086975, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594327145086975, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6790432
+      objectReference: {fileID: 0}
     - target: {fileID: 4142594327162155969, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
       propertyPath: m_text
       value: Enter your Student ID to search for your account.
@@ -1501,6 +1517,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4142594328090329349, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5938057
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594328090329349, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594328090329349, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6790432
+      objectReference: {fileID: 0}
     - target: {fileID: 4142594328156347534, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -1512,6 +1540,18 @@ PrefabInstance:
     - target: {fileID: 4142594328164261283, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594328164261286, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5938057
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594328164261286, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142594328164261286, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6790432
       objectReference: {fileID: 0}
     - target: {fileID: 4142594328550986370, guid: 7599a650dc9694e44863dd0fb3e32d2b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -2832,7 +2832,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7814708637379669131, guid: b7b13aae39ecc754a8d3f0b2b3e203c5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7814708637550931317, guid: b7b13aae39ecc754a8d3f0b2b3e203c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
