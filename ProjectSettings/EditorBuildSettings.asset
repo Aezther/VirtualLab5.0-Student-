@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/2. Lessons/Types of Fault.unity
     guid: 96c73af1d282ba54d8d7d361387d3476
   - enabled: 1
+    path: Assets/Scenes/4. Mini Games/Memory Game/Main.unity
+    guid: 4abd581d39d2b3049ac2bcb91ff027bb
+  - enabled: 1
     path: Assets/Scenes/4. Mini Games/Memory Game/lvl1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -69,11 +72,8 @@ EditorBuildSettings:
     path: Assets/Scenes/4. Mini Games/Memory Game/lvl3.unity
     guid: 2633fe2abf268c14c9216cad6d3d998b
   - enabled: 1
-    path: Assets/Scenes/4. Mini Games/Memory Game/Main.unity
-    guid: 4abd581d39d2b3049ac2bcb91ff027bb
-  - enabled: 1
     path: Assets/Scenes/4. Mini Games/Guess The Shadow/MInigames_GuessTheShadow.unity
-    guid: 942adf10774b6834abdecd319eeb24b4
+    guid: ae85b49c542b8324ba36f7a8650b98ea
   - enabled: 1
     path: Assets/Scenes/Post-Test/Microscope TrueOrFalse.unity
     guid: 95cdf337f565b914a8dd639a676e7e9c
@@ -118,15 +118,15 @@ EditorBuildSettings:
     path: Assets/Imported Packages/Types of Fault/Scenes/TypeOfFaultSim.unity
     guid: 605ad41a90029754d9e1a34845e91015
   - enabled: 1
-    path: Assets/Scenes/DnDLessonStart.unity
+    path: Assets/Scenes/LessonStartScene/DnDLessonStart.unity
     guid: 8c6ba97e90a3cbd459dc35ed04dce2ab
   - enabled: 1
-    path: Assets/Scenes/MicroLessonStart.unity
+    path: Assets/Scenes/LessonStartScene/MicroLessonStart.unity
     guid: efb29d1d084fede43a440fea33e9f77b
   - enabled: 1
-    path: Assets/Scenes/ToFLessonStart.unity
+    path: Assets/Scenes/LessonStartScene/ToFLessonStart.unity
     guid: 65755139eedbb954a915a03ad7360b3b
   - enabled: 1
-    path: Assets/Scenes/SpeedLessonStart.unity
+    path: Assets/Scenes/LessonStartScene/SpeedLessonStart.unity
     guid: 99318de248bcf6d4ab7502ac43d3a5eb
   m_configObjects: {}

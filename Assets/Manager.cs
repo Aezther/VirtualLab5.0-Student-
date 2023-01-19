@@ -8,6 +8,33 @@ public class Manager : MonoBehaviour {
     public GameObject youWin;
     public GameObject Complete;
     public GameObject AllLevelCompleted;
+    public GameObject PhytonMassagePopUp;
+    public GameObject LorisMassagePopUp;
+    public GameObject GoatMassagePopUp;
+    public GameObject HorseMassagePopUp;
+    public GameObject PhanterMassagePopUp;
+    public GameObject IbexMassagePopUp;
+    public GameObject PandaMassagePopUp;
+    public GameObject MonkMassagePopUp;
+    public GameObject SquirelMassagePopUp;
+    public GameObject WolfMassagePopUp;
+    public GameObject BoarMassagePopUp;
+    public GameObject CrocodileMassagePopUp;
+    public GameObject CowMassagePopUp;
+    public GameObject TrexMassagePopUp;
+    public GameObject FoxMassagePopUp;
+    public GameObject PigMassagePopUp;
+    public GameObject BirdMassagePopUp;
+    public GameObject MonkeyMassagePopUp;
+    public GameObject ArmadillosMassagePopUp;
+    public GameObject BilbiesMassagePopUp;
+    public GameObject BatMassagePopUp;
+    public GameObject EagleMassagePopUp;
+    public GameObject CamelMassagePopUp;
+    public GameObject CheetahMassagePopUp;
+    public GameObject DeerMassagePopUp;
+
+
     public void ResetAll(){
         
         Camel.transform.position=CamelInitialPos;
@@ -218,6 +245,7 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             CamelCorrect = true;
+            CamelMassagePopUp.SetActive(true);
         }
         else
         {
@@ -236,6 +264,7 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             BatCorrect = true;
+            BatMassagePopUp.SetActive(true);
         }
         else
         {
@@ -254,6 +283,7 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             EagleCorrect = true;
+            EagleMassagePopUp.SetActive(true);
         }
         else
         {
@@ -272,6 +302,7 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             CheetahCorrect = true;
+            CheetahMassagePopUp.SetActive(true);
         }
         else
         {
@@ -290,6 +321,7 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             DeerCorrect = true;
+            DeerMassagePopUp.SetActive(true);
         }
         else
         {
@@ -307,12 +339,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             BoarCorrect = true;
+            BoarMassagePopUp.SetActive(true);
         }
         else
         {
             Boar.transform.position=BoarInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -325,12 +359,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             CrocodileCorrect = true;
+            CrocodileMassagePopUp.SetActive(true);
         }
         else
         {
             Crocodile.transform.position=CrocodileInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropCow()
@@ -342,12 +378,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             CowCorrect = true;
+            CowMassagePopUp.SetActive(true);
         }
         else
         {
             Cow.transform.position=CowInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropTrex()
@@ -359,12 +397,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             TrexCorrect = true;
+            TrexMassagePopUp.SetActive(true);
         }
         else
         {
             Trex.transform.position=TrexInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropFox()
@@ -376,12 +416,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             FoxCorrect = true;
+            FoxMassagePopUp.SetActive(true);
         }
         else
         {
             Fox.transform.position=FoxInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropPig()
@@ -393,12 +435,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             PigCorrect = true;
+            PigMassagePopUp.SetActive(true);
         }
         else
         {
             Pig.transform.position=PigInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropBird()
@@ -410,12 +454,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             BirdCorrect = true;
+            BirdMassagePopUp.SetActive(true);
         }
         else
         {
             Bird.transform.position=BirdInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropMonkey()
@@ -427,12 +473,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             MonkeyCorrect = true;
+            MonkeyMassagePopUp.SetActive(true);
         }
         else
         {
             Monkey.transform.position=MonkeyInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropArmadillos()
@@ -444,12 +492,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             ArmadillosCorrect = true;
+            ArmadillosMassagePopUp.SetActive(true);
         }
         else
         {
             Armadillos.transform.position=ArmadillosInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         public void DropBilbies()
@@ -461,12 +511,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             BilbiesCorrect = true;
+            BilbiesMassagePopUp.SetActive(true);
         }
         else
         {
             Bilbies.transform.position=BilbiesInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -479,12 +531,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             PhytonCorrect = true;
+            PhytonMassagePopUp.SetActive(true);
         }
         else
         {
             Phyton.transform.position=PhytonInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -497,12 +551,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             LorisCorrect = true;
+            LorisMassagePopUp.SetActive(true);
         }
         else
         {
             Loris.transform.position=LorisInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -515,12 +571,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             GoatCorrect = true;
+            GoatMassagePopUp.SetActive(true);
         }
         else
         {
             Goat.transform.position=GoatInitialPos;
             source.clip=incorrect;
             source.Play();
+          
         } 
     }
         
@@ -533,12 +591,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             HorseCorrect = true;
+            HorseMassagePopUp.SetActive(true);
         }
         else
         {
             Horse.transform.position=HorseInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -551,12 +611,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             PhanterCorrect = true;
+            PhanterMassagePopUp.SetActive(true);
         }
         else
         {
             Phanter.transform.position=PhanterInitialPos;
             source.clip=incorrect;
             source.Play();
+          
         } 
     }
         
@@ -569,12 +631,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             IbexCorrect = true;
+            IbexMassagePopUp.SetActive(true);
         }
         else
         {
             Ibex.transform.position=IbexInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -587,12 +651,15 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             PandaCorrect = true;
+            PandaMassagePopUp.SetActive(true);
+
         }
         else
         {
             Panda.transform.position=PandaInitialPos;
             source.clip=incorrect;
             source.Play();
+           
         } 
     }
         
@@ -605,12 +672,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             MonkCorrect = true;
+            MonkMassagePopUp.SetActive(true);
         }
         else
         {
             Monk.transform.position=MonkInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -623,12 +692,14 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             SquirelCorrect = true;
+            SquirelMassagePopUp.SetActive(true);
         }
         else
         {
             Squirel.transform.position=SquirelInitialPos;
             source.clip=incorrect;
             source.Play();
+            
         } 
     }
         
@@ -641,12 +712,15 @@ public class Manager : MonoBehaviour {
             source.clip=correct[Random.Range(0,correct.Length)];
             source.Play();
             WolfCorrect = true;
+            WolfMassagePopUp.SetActive(true);
         }
         else
         {
             Wolf.transform.position=WolfInitialPos;
             source.clip=incorrect;
             source.Play();
+          
+            
         } 
     }
         public void DropPuffin()
@@ -655,6 +729,7 @@ public class Manager : MonoBehaviour {
             Puffin.transform.position=PuffinInitialPos;
             source.clip=incorrect;
             source.Play();
+           
         
     }
         public void DropOrchin()
@@ -663,6 +738,7 @@ public class Manager : MonoBehaviour {
             Orchin.transform.position=OrchinInitialPos;
             source.clip=incorrect;
             source.Play();
+
         
     }
         public void DropPlatypus()
