@@ -85,7 +85,7 @@ public class SettingsScript : MonoBehaviour
 
     //AUDIO
     public void VolumeSlider(float volume) {
-        volume = Mathf.Round(Mathf.Lerp(0,100, volume));
+        volume = Mathf.Round(Mathf.Lerp(0, 100, volume));
         volumeTextUI.text = volume.ToString();
     }
     public void SaveVolumeButton() {
