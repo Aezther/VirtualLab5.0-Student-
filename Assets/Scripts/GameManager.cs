@@ -301,15 +301,16 @@ public class GameManager : MonoBehaviour
                 //start
                 studentInfo.score = Score;
                 studentInfo.lesson = Lesson;
+                studentInfo.date = System.DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy");
 
-                sqlQuery = "INSERT INTO ScoresTBL (Lesson, Score , StudentID) VALUES ('" + Lesson + "','" + Score + "','" + studentInfo.StudentID + "');";
+
+                sqlQuery = "INSERT INTO ScoresTBL (Lesson, Score , Date, StudentID) VALUES ('" + Lesson + "','" + Score + "','" + studentInfo.date +" ','" + studentInfo.StudentID+"');";
                 //sqlQuery = "INSERT INTO SectionsTBL (Sections) VALUES('Carlo');";
                 dbCmd.CommandText = sqlQuery;
                 dbCmd.ExecuteNonQuery();
             }
             dbConnection.Close();
         }
-
         //SceneManager.LoadScene(finishSceneName); /////PUT THE NAME OF THE SCENE YOU WANT TO LOAD AT THE SERIALIZED FIELD AT THE INSPECTOR, IT'S CALLED FINISHSCENENAME
     }
 

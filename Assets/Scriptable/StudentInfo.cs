@@ -11,4 +11,5 @@ public class StudentInfo : ScriptableObject
 
     public int score;
     public string lesson;
+    public string date;
 }
