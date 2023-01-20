@@ -35,7 +35,7 @@ public class QueryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        connectionString = "Data Source = A:\\VirtualLab.db";
+        connectionString = "Data Source = C:\\Users\\Ian\\OneDrive\\Documents\\VirtualLab\\VirtualLab.db";
 
         if (lbHeader && lbContent)
         {
