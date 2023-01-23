@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4e43cbea3b9f8184cb48fe95a8163a69
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Dantesque
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 79306f4f898383042ade6363ff6a78cd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
