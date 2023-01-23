@@ -45,6 +45,9 @@ public class SettingsScript : MonoBehaviour
             UpdateResLabel();
         }
         LoadValues();
+
+        volumeSlider.onValueChanged.AddListener((vol) => { volumeTextUI.text = vol.ToString(); });
+        volumeTextUI.text = volumeSlider.value.ToString();
     }
     void Update()
     {
@@ -85,8 +88,12 @@ public class SettingsScript : MonoBehaviour
 
     //AUDIO
     public void VolumeSlider(float volume) {
+        Debug.Log("before: "+ volume);
+
         volume = Mathf.Round(Mathf.Lerp(0, 100, volume));
         volumeTextUI.text = volume.ToString();
+        Debug.Log("after: " + volume);
+
     }
     public void SaveVolumeButton() {
         float volumeValue = volumeSlider.value;
